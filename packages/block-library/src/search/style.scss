@@ -132,6 +132,14 @@ $button-spacing-y: math.div($grid-unit-15, 2); // 6px
 	}
 }
 
+// The input's own outline is removed above because the wrapper draws the
+// visible field. Show the focus indicator on the wrapper instead, so keyboard
+// users can still see when the search field has focus.
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper:has(.wp-block-search__input:focus-visible)) {
+	outline: 3px auto rgb(90 90 90 / 25%);
+	outline: 3px auto -webkit-focus-ring-color;
+}
+
 .wp-block-search.aligncenter .wp-block-search__inside-wrapper {
 	margin: auto;
 }
